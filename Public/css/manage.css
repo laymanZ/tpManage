@@ -1,0 +1,352 @@
+html, body
+{
+	padding: 0;
+	margin: 0;
+}
+body
+{
+	background-color: #fff;
+	font-family: Arial, Helvetica, Verdana;
+	font-size: 14px;
+	line-height: 22px;
+	color: #666;
+	position: relative;
+	-webkit-text-size-adjust: none;
+}
+body *
+{
+	text-shadow: none;
+}
+h1, h2, h3, h4, h5, h6
+{
+	line-height: 1;
+	font-weight: bold;
+	margin: 20px 0 10px 0;
+}
+h1, h2, h3
+{
+	font-size: 18px;
+}
+h4, h5, h6
+{
+	font-size: 16px;
+}
+p
+{
+	margin: 0 0 10px 0;
+}
+a, a:link, a:active, a:visited, a:hover
+{
+	color: inherit;
+	text-decoration: underline;
+}
+
+nav:not(.mm-menu)
+{
+	display: none;
+}
+
+.header,
+.content,
+.footer
+{
+	text-align: center;
+}
+.header,
+.footer
+{
+	background: #000;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 40px;
+
+	
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+	width: 100%;
+	height: 40px;
+	padding: 0 50px;
+}
+.header.fixed
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.footer.fixed
+{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+.header a
+{
+	background: center center no-repeat transparent;
+	background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC );
+
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 10px;
+}
+.content
+{
+	padding: 150px 50px 50px 50px;
+}
+.leftShow{
+	margin-left: 50px;
+	font-size: 16px;
+	font-weight: bold;
+}
+ul img{
+	margin-top: 110px;
+	border-radius: 100%;
+	max-width: 100px;
+	margin-left: 35%;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.message{
+	margin-left: 32%;
+	font-family: 'Microsoft YaHei', 'Helvetica','Arial','SimHei', sans-serif;
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+.welcome{
+	font-weight: bold;
+	margin-top: 40px;
+	margin-left: 32%;
+	font-size: 30px;
+	font-family: 'Microsoft YaHei', 'Helvetica','Arial','SimHei', sans-serif;
+}
+.leftUp{
+	display: block;
+	border-radius: 100%;
+	float: right;
+	margin-right: 75%;
+	min-width: 16px;
+	background-color: #FF0000;
+	text-align: center;
+	color: #fff;
+	font-size: 3px;
+}
+
+.itemAll{
+	height:;
+}
+.inputYang input{
+	width:850px;
+	border-radius: 3px;
+	border: 1px solid;
+	height: 40px;
+	box-shadow: none;
+	margin-bottom: 20px;
+	padding-left: 20px;
+}
+.item{
+	margin-top: 20px;
+	display:block;
+	width: 1100px;
+	margin-left: 455px;
+	margin-right: auto;
+	text-align: left;
+	padding-bottom: 20px;
+}
+
+.item img{
+	margin-left: -18px;
+	border-radius: 100%;
+	max-width: 50px;
+	margin-top: -10px;
+	margin-bottom: 40px;
+
+}
+.item:hover{
+	background-color: #f3f3f3;
+	cursor: pointer;
+}
+.item li{
+	list-style: none;
+	display: inline-block;
+	width: 1100px;
+	float: left;
+}
+.name{
+	font-size: 20px;
+	margin-left: 60px;
+	display: block;
+	width: 100px;
+	margin-top: -80px;
+				
+}
+
+.infoOther{
+				
+	ont-size: 18px;
+	margin-left:200px;
+	margin-right: 60px;
+	margin-top: -25px;
+}
+.infoOther2{
+	font-size: 18px;
+	margin-left:450px;
+	margin-right: 60px;
+	margin-top: -20px;
+}
+.infoOther3{
+	
+	margin-left:700px;
+	
+	margin-top: -23px;
+}
+.infoOther4{
+	font-size: 18px;
+	margin-left:750px;
+	margin-right: 60px;
+	margin-top: -20px;
+}
+.infoOther5{
+	font-size: 18px;
+	margin-left:850px;
+	margin-right: 60px;
+	margin-top: -25px;
+}
+.infoOther6{
+	font-size: 18px;
+	margin-left:900px;
+	margin-right: 60px;
+	margin-top: -25px;
+}
+.infoOther4 a,
+.infoOther5 a,
+.infoOther6 a{
+	text-decoration: none;
+}
+
+
+.headMessageT{
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+
+/*用户*/
+.userCheck,
+.userToBlack,
+.userRemove,
+.userBianJi{
+	
+}
+
+
+
+
+/*黑名单*/
+
+.blackHao{
+
+}
+
+.blackYiChu{
+
+}
+.blackShanchu{
+
+}
+.blackC{
+
+}
+.blackYiChu a,
+.blackShanchu a{
+	text-decoration: none;
+}
+.blackCheck,
+.blackYiDong,
+.blackRemove{
+
+}
+
+
+
+/*未读消息*/
+.urReadHao{
+
+}
+.unReadAgree{
+
+}
+.unReadYiru{
+
+}
+.unReadShanchu{
+
+}
+.unReadC{
+
+}
+.unReadAgree a,
+.unReadYiru a,
+.unReadShanchu a{
+	text-decoration: none;
+}
+.unReadCheck,
+.agreeRegist,
+.yiRu,
+.unReadRemove{
+
+}
+
+
+
+
+/*已读消息*/
+.readHao{
+
+}
+.readShanchu{
+
+}
+.readC{
+
+}
+
+.readShanchu a{
+	text-decoration: none;
+}
+.readCheck,
+.readRemove{
+
+}
+
+/*已发布活动*/
+.activityHao,
+.aXuHao,
+.aC,
+.aBianji,
+.activityCheck,
+.aDelete,
+.aEdit
+{
+
+}
+
+.aC a,
+.aBianji a{
+	text-decoration: none;
+}
+
+/*报名用户*/
+
+.userActivityHao,
+.userActivityC,
+.userActivityCheck,
+.userActivityShanchu,
+.userActivityRemove{
+
+}
+.userActivityShanchu a{
+	text-decoration: none;
+}

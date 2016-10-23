@@ -1,0 +1,125 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/custom_2.css" />
+		<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-material-datetimepicker.css" />
+	<link rel="stylesheet" href="__PUBLIC__/css/material.min.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css">
+	<link href='http://fonts.useso.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src = "__PUBLIC__/js/activity.js"></script>
+		 <script type="text/javascript">
+        	var addActivityUrl = '<?php echo U("Deal/addActivity",'','');?>';
+   		 </script>
+		<title>发布活动</title>
+	</head>
+	<body>
+	<!--  start 导航条 -->
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav" style="height: 51px;line-height: 51px;">
+    <div class="container" style="height: 51px;line-height: 51px;">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">青协会员</span>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="__URL__/manageIndexPage">首页</a></li>
+                <li><a href="__URL__/manageAboutPage">关于我们</a></li>
+                <li><a href="__URL__/manageAdvicePage">留言建议</a></li>
+                <li class="active"><a href="javascript:void(0)">发布活动</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Hi&nbsp;欢迎你 <span class="caret"></span>&nbsp;<?php echo ($_COOKIE['username']); ?>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" style="font-weight: bold;">艾斯</a></li>
+            <li><a href="#"><img src="__PUBLIC__/image/aisi.jpg"></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="__URL__/manageInfo">我的信息</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="__URL__/index">退出</a></li>
+          </ul>
+        </li>
+
+        <ul class="nav navbar-nav">
+                <li><a href="__URL__/managePage">管理中心</a></li>
+        </ul>
+      </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron" style="width: 1000px; margin: auto;text-align: center;margin-top: 50px;">
+  <h1>Hello, 青协!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Let's Start</a></p>
+  <form id="activityForm">
+  <p>活动名称*：<input type="text" class="form-control input-block-level" id="activityName" placeholder="活动名称" required="required" name="activityName" autofocus="autofocus" style="width: 300px;margin: 0 auto;"></p>
+  <p>开始时间*：<input type="text" class="form-control input-block-level" id="startData" placeholder="开始时间" required="required" name="startData" style="width: 300px;margin: 0 auto;" ></p>
+  <p>结束时间*：<input type="text" class="form-control input-block-level" id="endData" placeholder="结束时间" required="required" name="endData"  style="width: 300px;margin: 0 auto;" ></p>
+  <P>活动地点*：<input type="text" class="form-control input-block-level" id="activityPlace" placeholder="活动地点" required="required" name="activityPlace"  style="width: 300px;margin: 0 auto;"></P>
+  <p>活动描述*：<input type="text" class="form-control input-block-level" id="activityDes" placeholder="活动描述(100字以内)" required="required" name="activityDes" style="width: 300px;margin: 0 auto;"></p>
+  <p>我的备注：&nbsp;<input type="text" class="form-control input-block-level" id="activityBei" placeholder="我的备注"  name="activityBei"  style="width: 300px;margin: 0 auto;"></p>
+  <button class="btn btn-primary" type="submit">确定</button>
+  <button class="btn btn-primary" type="reset">重置</button>
+  </form>
+  
+</div>
+
+		
+
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:300px;margin:auto;margin-top: 200px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">发布活动提醒</h4>
+            </div>
+            <div class="modal-body">
+                <p id="activityMessage"></p>
+            </div>
+            <div class="modal-footer" style="height:60px;">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top: 0px;">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+		<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/material.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/moment-with-locales.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/bootstrap-material-datetimepicker.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			
+
+		
+			$('#startData').bootstrapMaterialDatePicker
+			({
+				time: false
+			});
+			$('#endData').bootstrapMaterialDatePicker
+			({
+				time: false
+			});
+			$.material.init()
+		});
+		</script>
+		
+	</body>
+</html>

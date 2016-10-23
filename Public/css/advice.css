@@ -1,0 +1,40 @@
+.border_all{
+	margin-top: 20px;
+	margin-left: 300px;
+	width: 680px;
+	float: left;
+}
+body{
+    padding-top: 80px;
+    padding-bottom: 40px;
+    color: #5a5a5a;
+}
+li a img{
+    margin-top: 5px;
+    max-width: 80px;
+    border-radius: 100%;
+    cursor:pointer;
+}
+.adMessage{
+	width: 680px;
+	margin-left: 300px;
+	font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+}
+.adMessage h1{
+	text-align: center;
+}
+.rightAssort{
+	margin-left: 300px;
+	
+	float: left;
+	width: 300px;
+	font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+	
+}
+.rightAssort a{
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	margin-left: 20px;
+	color: #728888;
+}

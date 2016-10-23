@@ -1,0 +1,296 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>关于我们</title>
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about.css">
+
+</head>
+<body>
+<div class="animsition">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">青协会员</span>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="" onclick="toIndex()">首页</a></li>
+                <li class="active"><a href="javascript:void(0)">关于我们</a></li>
+                <li><a href="" onclick="toAdvice()">留言建议</a></li>
+                <li><a href="" onclick="joinActivity()">活动报名</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Hi&nbsp;欢迎你 <span class="caret"></span>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($_COOKIE['username']); ?>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" style="font-weight: bold;">艾斯</a></li>
+            <li><a href="#"><img src="__PUBLIC__/image/aisi.jpg"></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="" onclick="myInfo()">我的信息</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="javascript:void(0)" onclick="cancel()" >退出</a></li>
+          </ul>
+        </li>
+      </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ad-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+        <li data-target="#ad-carousel" data-slide-to="2"></li>
+        <li data-target="#ad-carousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="__PUBLIC__/image/about1.jpg" alt="1 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                <div class="left_Partment">
+                    <h1>外宣部</h1>
+                    <p>浓墨重彩
+                    <br/>巧手灵心，描绘精彩</p>
+                </div>       
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="__PUBLIC__/image/about2.jpg" alt="2 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                <div class="left_Partment1">
+                    <h1>办公室</h1>
+
+                    <p>精打细算<br/>
+                    指马可待，温暖人心</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="__PUBLIC__/image/about3.jpg" alt="3 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                <div class="right_Partment">
+                    <h1>数学辅导队</h1>
+                    <p>天生我材<br/>
+                    笔尖数字，精彩绝伦</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="__PUBLIC__/image/about4.jpg" alt="4 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>项目统筹部</h1>
+                    <p>潇洒挥毫<br/>
+                    运筹帷幄，决策千里</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+<div class="container summary">
+
+    <div class="row" id="summary-container">
+        <div class="col-md-4">
+            <img class="img-circle" src="__PUBLIC__/image/qingxie_left.jpg" alt="左鸽子">
+
+            <h2>热情</h2>
+
+            <p>饱满的热情，积极的心态，让你的生活每天充满无与伦比的精彩</p>
+
+        </div>
+       
+        <div class="col-md-4">
+            <img class="img-circle" src="__PUBLIC__/image/qingxie_center.jpg" alt="qingxie_logo">
+
+            <h2>爱心</h2>
+
+            <p>只要你有爱心，乐于助人，每个人都是志愿者，收获给予的快乐</p>
+        </div>
+        
+        <div class="col-md-4">
+            <img class="img-circle" src="__PUBLIC__/image/qingxie_right.jpg" alt="右鸽子">
+
+            <h2>毅力</h2>
+
+            <p>不需要你多聪明，帮助他人，贵在坚持，难在坚持，简单在坚持</p>
+
+        </div>
+    </div>
+    
+
+    <hr class="feature-divider">
+
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li class="active"><a href="#tab-chrome" role="tab" data-toggle="tab">外宣部</a></li>
+        <li><a href="#tab-firefox" role="tab" data-toggle="tab">办公室</a></li>
+        <li><a href="#tab-safari" role="tab" data-toggle="tab">数学辅导队</a></li>
+        <li><a href="#tab-opera" role="tab" data-toggle="tab">项目统筹部</a></li>
+        <li><a href="#tab-ie" role="tab" data-toggle="tab">会员</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-chrome">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">外宣部
+                        <span class="text-muted">热血的先锋队</span></h2>
+
+                    <p class="lead">外宣部，外联部和宣传部的有力合并，负责每个青协活动的宣传以及与服务对象的联系，漂亮的宣传单、炫酷的视频、
+                    耐人寻味的标语中，都能看到每一位外宣部成员挥洒的背影。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="__PUBLIC__/image/waixuan.jpg"
+                         alt="外宣部">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-firefox">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="__PUBLIC__/image/bangongshi.jpg"
+                         alt="办公室">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">办公室
+                        <span class="text-muted">温暖的海湾</span>
+                    </h2>
+
+                    <p class="lead">办公室，每一条消息的及时通知，每次活动人数物品的统计师，节日的祝福、生日的问候，每一个温暖的字眼，
+                    无不让人感受到青协浓浓的情怀。</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-safari">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">数学辅导队
+                        <span class="text-muted">鲜明的特色</span></h2>
+
+                    <p class="lead">数学辅导队，与我们院的专业一脉相承，爱心家教、趣味数学，每个分秒的坚持与努力，志愿帮助
+                    家教学习，通过乐趣拓展数学的魅力，这就是我们的与众不同。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="__PUBLIC__/image/shuxuefudao.jpg"
+                         alt="数学辅导队">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-opera">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="__PUBLIC__/image/xiangmu.jpg"
+                         alt="项目统筹部">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">项目统筹部
+                        <span class="text-muted">把握每个活动细节</span>
+                    </h2>
+
+                    <p class="lead">项目统筹部，活动细节的操盘手，每个策划书中的策划细节关系着活动的进展，事无巨细，
+                    力求考虑全面，多种方案的思考，汲取每个活动的经验，不是完美主义者，却不断追求完美。</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-ie">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">青协会员
+                        <span class="text-muted">同一个梦想</span>
+                    </h2>
+
+                    <p class="lead">青协会员，青协大家庭中的一员，因为梦想，共聚一堂，每个活动的参与权
+                    属于每一位会员，建议与想法，是青协不断向前进步的动力，服务他人，帮助他人，每一位都是
+                        奉献的志愿者。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="__PUBLIC__/image/huiyuan.jpg"
+                         alt="青协会员">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    	<p class="pull-left">@CopyRight&nbsp;&nbsp;2016&nbsp;&nbsp;LZW</p>
+        <p class="pull-right"><a href="#top">回到顶部</a></p>
+    </footer>
+
+</div>
+</div>
+<script src="__PUBLIC__/js/jquery-1.11.1.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script>
+    $(function ()
+    {
+        $('#ad-carousel').carousel();
+        $('#menu-nav .navbar-collapse a').click(function (e)
+        {
+            var href = $(this).attr('href');
+            var tabId = $(this).attr('data-tab');
+            if ('#' !== href)
+            {
+                e.preventDefault();
+                $(document).scrollTop($(href).offset().top - 70);
+                if (tabId)
+                {
+                    $('#feature-tab a[href=#' + tabId + ']').tab('show');
+                }
+            }
+        });
+    });
+    function toIndex()
+    {
+        window.location.href = "__URL__/indexPage";
+    }
+    function toAdvice()
+    {
+        window.location.href = "__URL__/advicePage"
+    }
+    function myInfo()
+    {
+        window.location.href="__URL__/userInfo";
+    }
+    function cancel()
+    {
+       window.location.href= " __URL__/index";
+    }
+    function joinActivity()
+    {
+        window.location.href = "__URL__/userActivity";
+    }
+</script>
+</body>
+</html>

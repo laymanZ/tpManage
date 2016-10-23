@@ -1,0 +1,33 @@
+img{
+	border-radius: 100%;
+	max-width: 100px;
+}
+.border_all{
+	font-family: 'Microsoft YaHei', 'Helvetica','Arial','SimHei', sans-serif;
+	padding-top:100px;
+	width: 500px;
+	margin: auto;
+	text-align: center;
+}
+.leftShow{
+	max-width: 100px;
+	display: block;
+}
+a{
+	text-decoration: none;
+}
+.inputYangShi{
+	border-radius: 5px;
+	min-height: 30px;
+	min-width: 70px;
+}
+.buttonYangShi{
+	color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+        padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    cursor: pointer;
+}

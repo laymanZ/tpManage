@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+		<title>青协会员管理</title>
+
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/manage.css" />
+		
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css" />
+	<!-- 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/htmleaf-demo.css"> -->
+		<!-- <link rel="stylesheet" href="__PUBLIC__/css/semantic.min.css"> -->
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/jquery.mmenu.css" />
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/jquery.mmenu.dragopen.css" />
+
+		<script type="text/javascript">
+        	var manageAgreeRegistUrl = '{:U("Deal/manageAgreeRegist",'','')}';
+        	var manageYiRuBlackUrl = '{:U("Deal/manageYiRuBlack",'','')}';
+        	var manageDeleteUnReadUrl = '{:U("Deal/manageDeleteUnRead",'','')}';
+        	var manageDeleteReadUrl = '{:U("Deal/manageDeleteRead",'','')}';
+        	var manageYiChuBlackUrl = '{:U("Deal/manageYiChuBlack",'','')}';
+        	var manageDeleteChuBlackUrl = '{:U("Deal/manageDeleteChuBlack",'','')}';
+        	var manageUserToBlackUrl = '{:U("Deal/manageUserToBlack",'','')}';
+        	var manageUserDeleteUrl = '{:U("Deal/manageUserDelete",'','')}';
+        	var manageUserBianJiUrl = '{:U("Deal/manageUserBianJi",'','')}';
+        	var manageDeleteActivityUrl = '{:U("Deal/manageActivityDelete",'','')}';
+        	var manageEditActivityUrl = '{:U("Deal/manageActivityEdit",'','')}';
+        	var manageDeleteUserActivityUrl = '{:U("Deal/manageDeleteUserActivity",'','')}';
+   		 </script>
+
+		<!-- for the one page layout -->
+		<style type="text/css">
+			#intro,
+			#first,
+			#second,
+			#third,
+			#forth,
+			#fifth
+			{
+				height: 1080px;
+				text-align: center;
+
+			}
+			#intro
+			{
+				padding-top: 0;
+			}
+			#first,
+			#second,
+			#third,
+			#forth,
+			#fifth
+			{
+				border-top: 1px solid #ccc;
+				padding-top: 150px;
+			}
+			#intro table{
+				width: 1000px;
+				margin-left: 100px;
+			}
+			th{
+				text-align: center;
+			}
+			body{
+				background-color: #F9F9F9;
+			}
+			.container {
+			width: 50%;
+			margin: 50px auto;
+		}
+		.column {
+			margin-bottom: 20px;
+		}
+		
+		li:before {display: none;}
+		ul.ui.list {margin-left: 0}
+		</style>
+		
+		<!-- for the fixed header -->
+		<style type="text/css">
+			.header,
+			.footer
+			{
+				box-sizing: border-box;
+				width: 100%;
+				position: fixed;
+			}
+			.header
+			{
+				top: 0;
+			}
+			.footer
+			{
+				bottom: 0;
+			}
+			
+		</style>
+		
+		<script type="text/javascript" src="__PUBLIC__/js/hammer.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+		<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/manage.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/jquery.mmenu.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/jquery.mmenu.dragopen.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/jquery.mmenu.fixedelements.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var $menu = $('nav#menu'),
+					$html = $('html, body');
+
+				$menu.mmenu({
+					dragOpen: true
+				});
+
+				var $anchor = false;
+				$menu.find( 'li > a' ).on(
+					'click',
+					function( e )
+					{
+						$anchor = $(this);
+					}
+				);
+
+				var api = $menu.data( 'mmenu' );
+				api.bind( 'closed',
+					function()
+					{
+						if ( $anchor )
+						{
+							var href = $anchor.attr( 'href' );
+							$anchor = false;
+
+							//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+							if ( href.slice( 0, 1 ) == '#' )
+							{
+								$html.animate({
+									scrollTop: $( href ).offset().top
+								});	
+							}
+						}
+					}
+				);
+			});
+		</script>
+	</head>
+	<body>
+
+		<div id="page">
+			<div class="header Fixed">
+				<a href="#menu"></a>
+				青协会员管理
+			</div>
+			<div class="content" id="content">
+			<div id="intro">
+				<div class = "headMessageT">下面是青协所有会员的信息，你可以点击此按钮&nbsp;&nbsp;<button type="button" class="btn btn-primary" id="handleM">操作</button>&nbsp;&nbsp;进行一些操作
+				</div>
+					
+				 	<span class="inputYang"><input type="text" placeholder="Search by name..."></span>
+				 	
+						<volist name="userInfo" id="mInfo">
+						
+						<ul>
+							<li class = "item">
+				    			<img src="__PUBLIC__/image/helen.jpg">
+				    			
+				  				<div class="name">{$mInfo.username}</div>
+				  				
+				   		 		<div class="infoOther">{$mInfo.mail}</div>
+				    			<div class="infoOther2">{$mInfo.time}</div>
+				    			<div class="infoOther3"><input type="checkbox" class="userCheck"></input></div>
+				    			<div class="infoOther4"><a href="javascript:void(0)" class="userToBlack" untitle13={$mInfo.mail} untitle14={$mInfo.username} >移至黑名单</a></div>
+				    			<div class="infoOther5"><a href="javascript:void(0)" class="userRemove" untitle15={$mInfo.mail} untitle16={$mInfo.username} >删除</a></input></div>
+				    			<div class="infoOther6"><a href="javascript:void(0)" class="userBianJi" untitle17={$mInfo.mail} untitle18={$mInfo.username}>编辑</a></div>
+				    		</li>
+						</ul>
+						
+						</volist>
+					{$page3}
+			</div>
+			<div id="first">
+
+				<div class = "headMessageT">下面是您的未读消息，是用户的注册信息，你可以点击此按钮&nbsp;&nbsp;<button type="button" class="btn btn-primary" id="handleUnRead">操作</button>&nbsp;&nbsp;进行一些操作
+				</div>
+					<table class="table table-hover">
+   						<thead>
+    					 <tr>
+      					 	<th class="urReadHao">序号</th>
+       						<th>用户名</th>
+       						<th>邮箱</th>
+       						<th>注册时间</th>
+     					</tr>
+   						</thead>
+   						<tbody>
+   						<volist name="unreadInfo" id="unInfo">
+     					<tr>
+       						<td class="unReadC"><input type="checkbox"  class="unReadCheck"></input></td>
+       						<td>{$unInfo.username}</td>
+       						<td>{$unInfo.mail}</td>
+       						<td>{$unInfo.time}</td>
+       						<td class="unReadAgree"><a href="javascript:void(0)" class="agreeRegist" unTitle={$unInfo.mail} unTitle2={$unInfo.username} >同意注册</a></td>
+       						<td class="unReadYiru"><a href="javascript:void(0)" class="yiRu" unTitle3={$unInfo.mail} unTitle4={$unInfo.username}>移入黑名单</a></td>
+       						<td class="unReadShanchu"><a href="javascript:void(0)" class="unReadRemove" unTitle5={$unInfo.mail} unTitle6={$unInfo.username}>删除</a></td>
+     					</tr>
+     					</volist>
+   						</tbody>
+ 					</table>
+ 					{$page1}
+					<p><a href="#menu">打开菜单</a></p>
+				</div>
+				<div id="second">
+					<div class = "headMessageT">下面是您的已读消息，是您已同意用户的注册信息，你可以点击此按钮&nbsp;&nbsp;<button type="button" class="btn btn-primary" id="handleRead">操作</button>&nbsp;&nbsp;进行一些操作
+				</div>
+					<table class="table table-hover">
+   						<thead>
+    					 <tr>
+      					 	<th class="readHao">序号</th>
+       						<th>用户名</th>
+       						<th>邮箱</th>
+       						<th>注册时间</th>
+     					</tr>
+   						</thead>
+   						<tbody>
+   						<volist name="readmessageInfo" id="rInfo">
+     					<tr>
+       						<td class="readC"><input type="checkbox" class="readCheck"></input></td>
+       						<td>{$rInfo.username}</td>
+       						<td>{$rInfo.mail}</td>
+       						<td>{$rInfo.time}</td>
+       						
+       						<td class="readShanchu"><a href="javascript:void(0)" class= "readRemove" unTitle8={$rInfo.username} unTitle7={$rInfo.mail}>删除</a></td>
+     					</tr>
+     					</volist>
+   						</tbody>
+ 					</table>
+ 					{$page2}
+
+					<p><a href="#menu">打开菜单</a></p>
+				</div>
+				<div id="third">
+					<div class = "headMessageT">下面是黑名单中用户的信息，你可以点击此按钮&nbsp;&nbsp;<button type="button" class="btn btn-primary" id="handleBlack">操作</button>&nbsp;&nbsp;进行一些操作
+					</div>
+					<table class="table table-hover">
+   						<thead>
+    					 <tr>
+      					 	<th class="blackHao">序号</th>
+       						<th>用户名</th>
+       						<th>邮箱</th>
+       						<th>注册时间</th>
+     					</tr>
+   						</thead>
+   						<tbody>
+   						<volist name="blacklistInfo" id="bInfo">
+     					<tr>
+       						<td class="blackC"><input type="checkbox" class="blackCheck"></input></td>
+       						<td>{$bInfo.username}</td>
+       						<td>{$bInfo.mail}</td>
+       						<td>{$bInfo.time}</td>
+       						
+       						<td class="blackYiChu"><a href="javascript:void(0)" class="blackYiDong" unTitle9={$bInfo.mail} unTitle10={$bInfo.username}>移出黑名单</a></td>
+       						<td class="blackShanchu"><a href="javascript:void(0)" class="blackRemove" unTitle11={$bInfo.mail} unTitle12={$bInfo.username}>删除</a></td>
+     					</tr>
+     					</volist>
+   						</tbody>
+ 					</table>
+ 					{$page4}
+						<a href="#menu">打开菜单</a></p>
+				</div>
+				<div id="forth">
+					<div class = "headMessageT">下面是你的已发布的活动，你可以点击此按钮&nbsp;&nbsp;<button type="button" class="btn btn-primary" id="handleActivity">操作</button>&nbsp;&nbsp;进行一些操作
+					</div>
+					<table class="table table-hover">
+   						<thead>
+    					 <tr>
+      					 	<th class="activityHao">序号</th>
+       						<th>活动名称</th>
+       						<th>开始时间</th>
+       						<th>结束时间</th>
+       						<th>地点</th>
+     					</tr>
+   						</thead>
+   						<tbody>
+   						<volist name="activityInfo" id="aInfo">
+     					<tr>
+       						<td class="aXuHao"><input type="checkbox" class="activityCheck"></input></td>
+       						<td>{$aInfo.aname}</td>
+       						<td>{$aInfo.astime}</td>
+       						<td>{$aInfo.aendtime}</td>
+       						<td>{$aInfo.aplace}</td>
+       						
+       						<td class="aC"><a href="javascript:void(0)" class="aDelete" unTitle13={$aInfo.aname} >删除</a></td>
+       						<td class="aBianji"><a href="javascript:void(0)" class="aEdit" unTitle14={$aInfo.aname} unTitle15={$aInfo.astime}
+       						unTitle16={$aInfo.aendtime} unTitle17={$aInfo.aplace}>编辑</a></td>
+     					</tr>
+     					</volist>
+   						</tbody>
+ 					</table>
+ 					{$page5}
+						<a href="#menu">打开菜单</a></p>
+				</div>
+
+
+				<div id="fifth">
+					<div class = "headMessageT">下面是活动报名用户的信息，你可以点击此按钮&nbsp;&nbsp;<button type="button" class="btn btn-primary" id="handleUserActivity">操作</button>&nbsp;&nbsp;进行一些操作
+					</div>
+					<table class="table table-hover">
+   						<thead>
+    					 <tr>
+      					 	<th class="userActivityHao">序号</th>
+       						<th>用户名</th>
+       						<th>已报名活动</th>
+     					</tr>
+   						</thead>
+   						<tbody>
+   						<volist name="useractivityInfo" id="uaInfo">
+     					<tr>
+       						<td class="userActivityC"><input type="checkbox" class="userActivityCheck"></input></td>
+       						<td>{$uaInfo.username}</td>
+       						<td>{$uaInfo.aname}</td>
+       						
+       						
+       						<td class="userActivityShanchu"><a href="javascript:void(0)" class="userActivityRemove" userActivity1={$uaInfo.username} userActivity2={$uaInfo.aname}>删除</a></td>
+     					</tr>
+     					</volist>
+   						</tbody>
+ 					</table>
+ 					{$page6}
+						<a href="#menu">打开菜单</a></p>
+				</div>
+			</div>
+			<div class="footer Fixed">
+				CopyRight @LZW 2016 青协会员
+			</div>
+			<nav id="menu" style="background-color: #fff;">
+				<ul>
+					<div class="welcome">欢迎,root</div>
+					<img src="__PUBLIC__/image/aisi.jpg">
+					<br/>
+					<div class="message">青协，热爱你的生活</div>
+					<li><a href="__URL__/manageIndexPage"><div class="leftShow">首页</div></a></li>
+					<li><a href="#content"><div class="leftShow">查看用户</div></a></li>
+					<li><a href="#first"><div class="leftShow">未读消息<div class="leftUp">{$_COOKIE['unreadCount']}</div></div></a></li>
+					<li><a href="#second"><div class="leftShow">已读消息<div class="leftUp">{$_COOKIE['readCount']}</div></div></a></li>
+					<li><a href="#third"><div class="leftShow">黑名单</div></a></li>
+					<li><a href="#forth"><div class="leftShow">已发布活动</div></a></li>
+					<li><a href="#fifth"><div class="leftShow">报名用户</div></a></li>
+				</ul>
+			</nav>
+		</div>
+
+
+
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:300px;margin:auto;margin-top: 200px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">操作提醒</h4>
+            </div>
+            <div class="modal-body">
+                <p id="manageMessageH"></p>
+            </div>
+            <div class="modal-footer" style="height:60px;">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top: 0px;">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="mymodal2">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:300px;margin:auto;margin-top: 200px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">操作提醒</h4>
+            </div>
+            <div class="modal-body">
+                <form id='editForm'>
+                <label>活动名称:</label>
+              <p id="activityNameEdit"></p>
+              <label for="sTimeEdit">开始时间:</label>
+              <input type="datetime" class="form-control"  id="sTimeEdit" name="sTimeEdit" placeholder="请输入开始时间" required="required">
+             <label for="eTimeEdit">结束时间:</label>
+              <input type="datetime" class="form-control" id="eTimeEdit" placeholder="请输入结束时间" required="required">  
+               <label for="aPlaceEdit">活动地点:</label>
+              <input type="text" class="form-control" id="aPlaceEdit" placeholder="请输入活动地点" required="required">
+
+               <div class="modal-footer" style="height:60px;">
+				<button type="submit" class="btn btn-primary" style="margin-top: 0px;" >确定</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" style="margin-top: 0px;">取消</button>
+            	</div>
+         	</form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+	
+	<script src="__PUBLIC__/js/jquery.easysearch.js"></script>
+	<script>
+		$('input').jSearch({ 
+		    selector  : 'ul',
+		    child : 'li div.name',
+		    minValLength: 0,
+		    Found : function(elem, event){
+		        $(elem).parent().parent().show();
+		    },
+		    NotFound : function(elem, event){
+		        $(elem).parent().parent().hide();
+		    },
+		    After : function(t){
+		        if (!t.val().length) $('ul li').show();
+		    }
+		});
+	</script>
+	</body>
+</html>

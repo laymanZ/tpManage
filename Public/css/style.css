@@ -1,0 +1,260 @@
+html,body{overflow: hidden;}
+.bg
+{
+	width: 100%;
+	height: 100%;
+	top:0;
+	z-index: -1;
+	position: absolute;
+	
+}
+.bg img
+{
+	display: block;
+	outline: none;
+	border:0;
+	height: 100%;
+	width: 100%;
+}
+.alpha
+{
+	filter:alpha(opacity=70);
+	opacity: 0.5;
+}
+.banner .container .h1{
+		font-size: 36px;
+		color: #FFF06F;
+		
+		margin-bottom: 115px;
+		font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+	}
+	.banner .container .middle > a{
+		font-size: 18px;
+		color: #FFF06F;
+		border: 1px solid #FFF06F;
+	}
+	.banner .container .middle{
+		margin-top: 0;
+		
+	}
+	.banner > .filter{
+		background-color: transparent;
+	}
+.banner .container .middle > a {
+	
+  
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    padding: 17px 93px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    background-color: transparent;
+	font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+}
+.banner .container .middle > a:hover{
+	
+  
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    padding: 17px 93px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    background-color: #ADEAEA;
+	font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+}
+
+.btn
+{
+	margin-top:258px;
+	text-align:center;
+}
+
+.biaoyu{
+    font-size:2.8em;
+    color:white;
+    margin-top:200px;
+    text-align:center;
+    font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+}
+.welcome{
+	margin-top:80px;
+	font-size:3em;
+	font-weight:bold;
+    color:white;
+    text-align:center;
+    font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+}
+
+.test_had{
+    margin-top:17px;
+    text-align:center;
+    font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+    color:white;
+}
+.test_had a{
+    text-decoration: none;
+}
+.login_btn
+{
+	text-align:center;
+    margin-top:40px;
+	
+}
+
+.container-login {
+    
+    position: absolute;
+    
+	left:41.5%;
+    top: 240px;
+    width: 2000px;
+   
+}
+.input-block-level {
+    box-sizing: border-box;
+    display: block;
+    min-height: 45px;
+	margin-bottom:10px;
+    width: 100%;
+}
+.please_login{
+	position: absolute;
+    color:white;
+	font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+	left:41.5%;
+	top:180px;
+    
+}
+.remember_me
+{
+	color:white;
+	position: absolute;
+    left:42.8%;
+	top:400px;
+}
+.login_all{
+    text-align:center;
+}
+
+
+
+
+
+.bigRegist_container{
+	margin-top:300px;
+	margin-left:600px;
+	width:800px;
+	text-align:top;
+	
+}
+
+.registMsg{
+    float:left;
+	max-width:300px;
+	font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+	color:white;
+}
+.regist_form{
+	margin-left:90px;
+	display: block;
+	max-width:400px;
+	float:left;
+}
+
+.regist_input{
+    min-height: 25px;
+	width:278px;
+	margin-top:10px;
+    padding: 10px;
+    font-size: 16px;
+    background-clip: padding-box;
+    border-color: rgba(0,0,0,0.25);
+    border-radius: 5px;
+	margin-bottom:5px;
+}
+
+
+
+
+
+
+.btn-jumbotron {
+    padding: 0.75em 1.5em;
+    font-size: 25px;
+    border-radius: 6px;
+}
+
+.btn-theme-green {
+    padding: 0.55em 1em;
+    font-weight: 500;
+    font-size: inherit;
+    line-height: 1.5;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+    background-color: #6cc644;
+    background-image: -webkit-linear-gradient(#7bcc58, #60b838);
+    background-image: linear-gradient(#7bcc58, #60b838);
+    border-color: #55a532;
+}
+
+.btn-regist-block {
+
+	margin-top:20px;
+    display: block;
+	height:55px;
+    width: 280px;
+    text-align: center;
+}
+github.com/media="all"
+.btnRegist {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+	
+}
+
+
+
+.qingxieMsg{
+	font-size:2em;
+}
+.registFont{
+    font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+    font-weight: bold;
+}
+.yanzheng{
+    display: block;
+    width: 300px;
+    color:white;
+    position: absolute;
+    left:53%;
+    margin-top: -55px;
+}
+.yanzheng a{
+    text-decoration: none;
+    color: white;
+
+}

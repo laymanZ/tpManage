@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/animsition.min.css">
+<title>青协首页</title>
+</head>
+
+<body>
+
+<div class="bg">
+   
+    <!-- <img src="http://7xrv9y.com1.z0.glb.clouddn.com/qx1.jpg" /> -->
+    <img src="__PUBLIC__/image/qx1.jpg">
+    
+</div>
+    <h1 class = "biaoyu">
+        <div class="animsition">青&nbsp;协</div><br/><br/>
+        <div class="animsition2">热&nbsp;爱&nbsp;你&nbsp;的&nbsp;生&nbsp;活</div>
+    </h1>
+<div class = "btn">
+<section class="banner">
+	
+	<div class="container">
+		
+		<div class="middle">
+			
+			<a href="__URL__/registPage">
+				立即注册
+			</a>
+		
+		</div>
+		
+	</div>
+</section>
+</div>
+    <div class = "test_had"><a  href="__URL__/loginPage">已有账号？登录</a>
+    <span>&nbsp;&nbsp;或者&nbsp;&nbsp;</span>
+    <a  href="__URL__/showA">查看个性展示</a></div>
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+  
+          $(".animsition").animsition({
+          
+            inClass               :   'fade-in-up-sm',
+            outClass              :   'fade-out-down-lg',
+            inDuration            :    3000,
+            outDuration           :    800,
+            linkElement           :   '.animsition-link',
+            // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+            loading               :    true,
+            loadingParentElement  :   'body', //animsition wrapper element
+            loadingClass          :   'animsition-loading',
+            unSupportCss          : [ 'animation-duration',
+                                      '-webkit-animation-duration',
+                                      '-o-animation-duration'
+                                    ],
+            overlay               :   false,
+            overlayClass          :   'animsition-overlay-slide',
+            overlayParentElement  :   'body'
+          });
+          $(".animsition2").animsition({
+          
+            inClass               :   'fade-in-down-sm',
+            outClass              :   'fade-out-down-lg',
+            inDuration            :    3000,
+            outDuration           :    800,
+            linkElement           :   '.animsition-link',
+            // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+            loading               :    true,
+            loadingParentElement  :   'body', //animsition wrapper element
+            loadingClass          :   'animsition-loading',
+            unSupportCss          : [ 'animation-duration',
+                                      '-webkit-animation-duration',
+                                      '-o-animation-duration'
+                                    ],
+            overlay               :   false,
+            overlayClass          :   'animsition-overlay-slide',
+            overlayParentElement  :   'body'
+          });
+        });
+    </script>
+</body>
+</html>	

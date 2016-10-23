@@ -1,0 +1,34 @@
+.indexMIRight{
+	
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.02),0 4px 10px rgba(0,0,0,0.06);
+	display: block;
+	border-radius: 10px;
+	margin-top: 100px;
+	max-width: 340px;
+	
+	margin-left: 20px;
+	
+    background-color: #fff;
+	font-family: 'Microsoft YaHei', 'Helvetica','Arial','SimHei', sans-serif;
+	padding-bottom: 30px;
+}
+.indexRightAll{
+	float: right;
+	text-align: center;
+	    margin-top: -84%;
+}
+.indexRightAll2{
+	float: right;
+	text-align: center;
+	
+}
+.indexMIRight img{
+	margin-top: 18px;
+	border-radius: 100%;
+	max-width: 100px;
+	cursor: pointer;
+}
+.indexMIRight hr{
+	margin-right: 80px;
+	margin-left: 80px;
+}
